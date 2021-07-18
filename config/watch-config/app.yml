@@ -1,0 +1,4 @@
+log:
+  - name: clog
+    type: console
+    min_level: debug

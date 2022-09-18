@@ -7,7 +7,10 @@ import (
 
 func main() {
 	logger := log.New()
-	clog := console.New()
+	// logger.DisableTimeField = true
+
+	opts := console.ConsoleOptions{DisableColor: true}
+	clog := console.New(opts)
 	logger.AddHandler(clog, log.AllLevels...)
 	log.SetLogger(logger)
 

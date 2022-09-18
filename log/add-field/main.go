@@ -7,9 +7,15 @@ import (
 
 func main() {
 	logger := log.New()
-	clog := console.New()
+	opts := console.ConsoleOptions{DisableColor: false}
+	clog := console.New(opts)
 	logger.AddHandler(clog, log.AllLevels...)
 	log.SetLogger(logger)
 
-	log.Str("app_id", "blackbear").Debug("Hello World")
+	logger = log.Str("app_id", "blackbear").Logger()
+
+	logger.Debug("Hello World")
+	logger.Info("Hello World")
+	logger.Warn("Hello World")
+	logger.Error("Hello World")
 }

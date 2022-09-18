@@ -63,7 +63,8 @@ func InitLogger() error {
 	for _, target := range logItems {
 		switch target.Type {
 		case "console":
-			clog := console.New()
+			opts := console.ConsoleOptions{DisableColor: false}
+			clog := console.New(opts)
 			levels := log.GetLevelsFromMinLevel(target.MinLevel)
 			logger.AddHandler(clog, levels...)
 		case "gelf":

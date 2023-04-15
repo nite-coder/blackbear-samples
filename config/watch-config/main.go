@@ -23,12 +23,14 @@ func main() {
 		panic(err)
 	}
 
-	fileProvder.OnChangedEvent = func(oldContent string, newContent string) {
+	config.OnChangedEvent(func() error {
+		log.Info("file changed")
 		err := InitLogger()
 		if err != nil {
-			panic(err)
+			return err
 		}
-	}
+		return nil
+	})
 
 	config.AddProvider(fileProvder)
 

@@ -2,20 +2,13 @@ package main
 
 import (
 	"github.com/nite-coder/blackbear/pkg/log"
-	"github.com/nite-coder/blackbear/pkg/log/handler/console"
 )
 
 func main() {
-	logger := log.New()
-	opts := console.ConsoleOptions{DisableColor: false}
-	clog := console.New(opts)
-	logger.AddHandler(clog, log.AllLevels...)
-	log.SetLogger(logger)
+	logger := log.With().Str("app_id", "blackbear").Logger()
 
-	logger = log.Str("app_id", "blackbear").Logger()
-
-	logger.Debug("Hello World")
-	logger.Info("Hello World")
-	logger.Warn("Hello World")
-	logger.Error("Hello World")
+	logger.Debug().Msg("Hello World")
+	logger.Info().Msg("Hello World")
+	logger.Warn().Msg("Hello World")
+	logger.Error().Msg("Hello World")
 }

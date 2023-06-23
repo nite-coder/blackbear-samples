@@ -1,16 +1,16 @@
 package main
 
 import (
+	"os"
 	"time"
 
 	"github.com/nite-coder/blackbear/pkg/config"
 	"github.com/nite-coder/blackbear/pkg/config/provider/file"
 	"github.com/nite-coder/blackbear/pkg/log"
-	"github.com/nite-coder/blackbear/pkg/log/handler/console"
+	"github.com/nite-coder/blackbear/pkg/log/handler/text"
 )
 
 func main() {
-
 	fileProvder := file.New()
 
 	err := fileProvder.Load()
@@ -24,7 +24,7 @@ func main() {
 	}
 
 	config.OnChangedEvent(func() error {
-		log.Info("file changed")
+		log.Info().Msg("file changed")
 		err := InitLogger()
 		if err != nil {
 			return err
@@ -40,8 +40,8 @@ func main() {
 	}
 
 	for {
-		log.Info("Hello")
-		log.Debug("Debug")
+		log.Info().Msg("Hello")
+		log.Debug().Msg("Debug")
 
 		time.Sleep(2 * time.Second)
 	}
@@ -54,8 +54,6 @@ type LogItem struct {
 }
 
 func InitLogger() error {
-	logger := log.New()
-
 	logItems := []LogItem{}
 	err := config.Scan("log", &logItems)
 	if err != nil {
@@ -64,17 +62,17 @@ func InitLogger() error {
 
 	for _, target := range logItems {
 		switch target.Type {
-		case "console":
-			opts := console.ConsoleOptions{DisableColor: false}
-			clog := console.New(opts)
-			levels := log.GetLevelsFromMinLevel(target.MinLevel)
-			logger.AddHandler(clog, levels...)
-		case "gelf":
+		case "text":
+			opts := log.HandlerOptions{
+				Level:       log.NewLevel(target.MinLevel),
+				DisableTime: true,
+			}
+			logger := log.New(text.New(os.Stderr, &opts))
+			log.SetDefault(logger)
+		case "json":
 		}
 
 	}
-
-	log.SetLogger(logger)
 
 	return nil
 }

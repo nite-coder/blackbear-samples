@@ -14,6 +14,14 @@ github.com/mitchellh/mapstructure v1.5.0/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RR
 github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e h1:fD57ERR4JtEqsWbfPhv4DMiApHyliiK5xCTNVSPiaAs=
 github.com/nite-coder/blackbear v0.0.0-20230415135809-02debe2385b0 h1:lO4l8MbAa4WorblmcRtv8Or7TM8CEk3ZR9ypGS2o2GI=
 github.com/nite-coder/blackbear v0.0.0-20230415135809-02debe2385b0/go.mod h1:3XGmJXqlvjxq3Rsom/sHeQW4sbEwtbcsJ5i0zsRLBWo=
+github.com/nite-coder/blackbear v0.0.0-20230416031003-082c722be5b4 h1:Oun+9jjKhT2Viq7vTePWlc9vxFefz0fE86+xmzt1Fsg=
+github.com/nite-coder/blackbear v0.0.0-20230416031003-082c722be5b4/go.mod h1:3XGmJXqlvjxq3Rsom/sHeQW4sbEwtbcsJ5i0zsRLBWo=
+github.com/nite-coder/blackbear v0.0.0-20230623060323-c79db26f1cab h1:7lS0Y+S4Wahm5T7hKm3Pk+xM6Iz9nz9J81+tbZaaioM=
+github.com/nite-coder/blackbear v0.0.0-20230623060323-c79db26f1cab/go.mod h1:3XGmJXqlvjxq3Rsom/sHeQW4sbEwtbcsJ5i0zsRLBWo=
+github.com/nite-coder/blackbear v0.0.0-20230623063025-3dc6773d975c h1:/jAqu6u3acDowHPQOSPnqSWIHUgksQBbq2dQHVUoHz0=
+github.com/nite-coder/blackbear v0.0.0-20230623063025-3dc6773d975c/go.mod h1:3XGmJXqlvjxq3Rsom/sHeQW4sbEwtbcsJ5i0zsRLBWo=
+github.com/nite-coder/blackbear v0.0.0-20230623095634-5bf75ac5a123 h1:V6s3aA2hgEy6WHp3fd6kFPwxoo8Nb5kzCXDgYhIfIBw=
+github.com/nite-coder/blackbear v0.0.0-20230623095634-5bf75ac5a123/go.mod h1:3XGmJXqlvjxq3Rsom/sHeQW4sbEwtbcsJ5i0zsRLBWo=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/stretchr/testify v1.8.2 h1:+h33VjcLVPDHtOdpUCuF+7gSuG3yGIftsP1YvFihtJ8=
 golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=

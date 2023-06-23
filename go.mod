@@ -2,7 +2,7 @@ module github.com/nite-coder/blackbear-samples
 
 go 1.18
 
-require github.com/nite-coder/blackbear v0.0.0-20230415135809-02debe2385b0
+require github.com/nite-coder/blackbear v0.0.0-20230623095634-5bf75ac5a123
 
 require (
 	github.com/fatih/color v1.15.0 // indirect
